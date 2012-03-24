@@ -57,5 +57,10 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+  
+  def similar
+    movie = Movie.find(params[:id])
+    @movies = Movie.find_all_by_director(movie.director)
+  end
 
 end

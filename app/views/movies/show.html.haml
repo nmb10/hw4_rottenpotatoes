@@ -1,5 +1,5 @@
 -# in app/views/movies/show.html.haml
-
+= link_to 'Find Movies With Same Director', similar_movie_path(@movie)
 %h2 Details about #{@movie.title}
 
 %ul#details
